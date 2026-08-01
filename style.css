@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* efek lope lope jatuh */
+body::before {
+    content: "💖 💕 💗 💘 💝";
+    font-size: 30px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    animation: jatuh 8s linear infinite;
+}
+
+@keyframes jatuh {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(110vh); }
+}
+
+h1 {
+    color: #e75468;
+    font-size: 25px;
+}
+
+#gif {
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.btn-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    border: none;
+    padding: 13px 35px;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.yes-btn {
+    background: #f0445c;
+}
+
+.no-btn {
+    background: #999;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#text {
+    color: #e75468;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
