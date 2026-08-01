@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You ❤️</title>
+    <title>Buat Kamu 🩷</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="wrapper">
-
-    <h1>Do you like me?</h1>
-
-    <img id="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute gif">
-
-    <div class="btn-group">
-        <button class="yes-btn" onclick="yesClick()">Yes</button>
-        <button class="no-btn" onclick="noClick()">No</button>
+    <div class="wrapper">
+        <h1 id="judul">Kamu suka aku ga? 🥺</h1>
+        <img id="gif" src="gif1.gif" alt="kucing">
+        <div id="tombol">
+            <button class="yes" onclick="jawab('yes')">Mau dong ❤️</button>
+            <button class="no" onclick="jawab('no')">Engga 😣</button>
+        </div>
+        <p id="teks"></p>
     </div>
+<script>
+    function jawab(pilihan) {
+        let gif = document.getElementById('gif');
+        let judul = document.getElementById('judul');
+        let teks = document.getElementById('teks');
+        let tombol = document.getElementById('tombol');
 
-    <p id="text"></p>
-
-</div>
-
-<script src="script.js"></script>
-
+        if(pilihan === 'yes') {
+            gif.src = "gif3.gif"; 
+            judul.innerHTML = "YEYYY MAKASIII 😻❤️";
+            teks.innerHTML = "Aku paling bahagia hari ini!";
+            tombol.style.display = "none";
+        } 
+        else {
+            gif.src = "gif2.gif"; 
+            judul.innerHTML = "Huhuuu 😭";
+            teks.innerHTML = "Gapapa... aku nangis di pojokan aja";
+            tombol.style.display = "none";
+        }
+    }
+</script>
 </body>
-  </html>
+</html>
