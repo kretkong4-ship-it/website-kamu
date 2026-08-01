@@ -82,3 +82,16 @@ button:active {
     font-weight: bold;
     margin-top: 20px;
   }
+/* BIAR TOMBOL NGECILNYA HALUS */
+button {
+    transition: transform 0.3s ease;
+}
+
+/* GEDEIN GAMBAR BIAR GA KECIL */
+#gif {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+}
