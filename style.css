@@ -3,11 +3,19 @@
 }
 
 body {
-  background-image: url('bg-pink.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+    background-image: url('bg-pink.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* biar ga miring */
 }
 
 .wrapper {
@@ -16,19 +24,12 @@ body {
     background: white;
     padding: 30px 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 50px; /* biar ada jarak dari atas */
+    text-align: center; /* biar ke tengah */
 }
 
-/* efek lope lope jatuh */
-body::before {
-    content: "💖 💕 💗 💘 💝";
-    font-size: 30px;
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    animation: jatuh 8s linear infinite;
-}
+/* efek lope lope jatuh
 
 @keyframes jatuh {
     0% { transform: translateY(0); }
