@@ -9,31 +9,45 @@
         <h1 id="judul">Kamu suka aku ga? 🥺</h1>
         <img id="gif" src="gif1.gif" alt="kucing">
         <div id="tombol">
-            <button class="yes" onclick="jawab('yes')">Mau dong ❤️</button>
-            <button class="no" onclick="jawab('no')">Engga 😣</button>
+            <button id="btnYes" class="yes" onclick="jawab('yes')">Mau dong ❤️</button>
+            <button id="btnNo" class="no" onclick="jawab('no')">Engga 😣</button>
         </div>
         <p id="teks"></p>
     </div>
-<script>
-    function jawab(pilihan) {
-        let gif = document.getElementById('gif');
-        let judul = document.getElementById('judul');
-        let teks = document.getElementById('teks');
-        let tombol = document.getElementById('tombol');
 
-        if(pilihan === 'yes') {
-            gif.src = "gif3.gif"; 
-            judul.innerHTML = "YEYYY MAKASIII 😻❤️";
-            teks.innerHTML = "Aku paling bahagia hari ini!";
-            tombol.style.display = "none";
-        } 
-        else {
-            gif.src = "gif2.gif"; 
-            judul.innerHTML = "Huhuuu 😭";
-            teks.innerHTML = "Gapapa... aku nangis di pojokan aja";
-            tombol.style.display = "none";
+<script>
+let ukuranNo = 1; // buat ngecilin tombol no
+
+function jawab(pilihan) {
+    let gif = document.getElementById('gif');
+    let judul = document.getElementById('judul');
+    let teks = document.getElementById('teks');
+    let btnNo = document.getElementById('btnNo');
+    let btnYes = document.getElementById('btnYes');
+
+    if(pilihan === 'yes') {
+        gif.src = "gif3.gif"; // gif we are dating
+        judul.innerHTML = "YEYYY MAKASIII 😻❤️";
+        teks.innerHTML = "Aku paling bahagia hari ini!";
+        document.getElementById('tombol').style.display = "none";
+    } 
+    else {
+        gif.src = "gif2.gif"; // gif nangis
+        judul.innerHTML = "Huhuuu 😭";
+        teks.innerHTML = "Yakin mau nolak aku?";
+        
+        // bikin tombol no makin kecil
+        ukuranNo = ukuranNo - 0.3;
+        btnNo.style.transform = `scale(${ukuranNo})`;
+        
+        // kalo udah terlalu kecil, ilangin
+        if(ukuranNo <= 0.1) {
+            btnNo.style.display = "none";
+            teks.innerHTML = "Nah kan tombol NO nya udah ilang 😏";
         }
     }
+}
 </script>
+
 </body>
 </html>
