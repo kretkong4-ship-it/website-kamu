@@ -1,52 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Buat Kamu 🩷</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="wrapper">
-        <h1 id="judul">Kamu suka aku ga? 🥺</h1>
-        <img id="gif" src="gif1.gif" alt="kucing">
-        <div id="tombol">
-            <button id="btnYes" class="yes" onclick="jawab('yes')">Mau dong ❤️</button>
-            <button id="btnNo" class="no" onclick="jawab('no')">Engga 😣</button>
-        </div>
-        <p id="teks"></p>
-    </div>
-
 <script>
-let ukuranNo = 1; // buat ngecilin tombol no
+let ukuranNo = 1;
 
 function jawab(pilihan) {
-    let gif = document.getElementById('gif');
-    let judul = document.getElementById('judul');
-    let teks = document.getElementById('teks');
-    let btnNo = document.getElementById('btnNo');
-    let btnYes = document.getElementById('btnYes');
+    const gif = document.getElementById("gif");
+    const judul = document.getElementById("judul");
+    const teks = document.getElementById("teks");
+    const btnNo = document.getElementById("btnNo");
 
-    if(pilihan === 'yes') {
-    gif.src = "gif3.gif";
-    judul.innerHTML = "YEYYY MAKASIII 🥰❤️";
-    teks.innerHTML = "Aku paling bahagia hari ini!";
-    document.getElementById('tombol').style.display = "none"; // GANTI INI
-    }
-        gif.src = "gif2.gif"; // gif nangis
+    if (pilihan === "yes") {
+        gif.src = "gif3.gif";
+        judul.innerHTML = "YEYYY MAKASIII 🥰❤️";
+        teks.innerHTML = "Aku paling bahagia hari ini!";
+        document.getElementById("tombol").style.display = "none";
+    } else {
+        gif.src = "gif2.gif";
         judul.innerHTML = "Huhuuu 😭";
         teks.innerHTML = "Yakin mau nolak aku?";
-        
-        // bikin tombol no makin kecil
-        ukuranNo = ukuranNo - 0.3;
+
+        ukuranNo -= 0.3;
         btnNo.style.transform = `scale(${ukuranNo})`;
-        
-        // kalo udah terlalu kecil, ilangin
-        if(ukuranNo <= 0.1) {
+
+        if (ukuranNo <= 0.1) {
             btnNo.style.display = "none";
             teks.innerHTML = "Nah kan tombol NO nya udah ilang 😏";
         }
     }
 }
 </script>
-
-</body>
-</html>
